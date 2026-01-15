@@ -1,8 +1,33 @@
+import { useEffect, useState } from "react";
 import "./Footer.css";
 
 function Footer() {
+  const [showTop, setShowTop] = useState(false);
+
+  // 👇 JS: show / hide back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 👇 JS: smooth scroll
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  // 👇 JS: scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer fade-in">
       <div className="footer-container">
 
         {/* Company Info */}
@@ -18,11 +43,11 @@ function Footer() {
         <div className="footer-box">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#platforms">Platforms</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#contact">Get in Touch</a></li>
+            <li><button onClick={() => scrollToSection("home")}>Home</button></li>
+            <li><button onClick={() => scrollToSection("services")}>Services</button></li>
+            <li><button onClick={() => scrollToSection("platforms")}>Platforms</button></li>
+            <li><button onClick={() => scrollToSection("careers")}>Careers</button></li>
+            <li><button onClick={() => scrollToSection("contact")}>Get in Touch</button></li>
           </ul>
         </div>
 
@@ -44,13 +69,19 @@ function Footer() {
           <p>Phone: +91 9536063146 , 7055165787</p>
           <p>India</p>
         </div>
-
       </div>
 
       {/* Bottom */}
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} ShahTech. All rights reserved.</p>
       </div>
+
+      {/* Back to top */}
+      {showTop && (
+        <button className="back-to-top" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
     </footer>
   );
 }

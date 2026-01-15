@@ -1,6 +1,32 @@
+import { useEffect } from "react";
 import "./About.css";
 
 function About() {
+
+  // 👇 JS: scroll animation
+  useEffect(() => {
+    const section = document.querySelector(".about");
+    const points = document.querySelectorAll(".about-points div");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add("show");
+
+            points.forEach((point, index) => {
+              point.style.transitionDelay = `${index * 0.15}s`;
+              point.classList.add("show");
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(section);
+  }, []);
+
   return (
     <section id="about" className="about">
       <div className="about-content">

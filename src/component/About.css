@@ -35,3 +35,25 @@
   font-size: 15px;
   color: #333;
 }
+
+.about {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.about.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-points div {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s ease;
+}
+
+.about-points div.show {
+  opacity: 1;
+  transform: translateX(0);
+}

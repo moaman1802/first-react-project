@@ -1,6 +1,27 @@
+import { useEffect } from "react";
 import "./Platforms.css";
 
 function Platforms() {
+
+  // 👇 JS Logic (Scroll Animation)
+  useEffect(() => {
+    const cards = document.querySelectorAll(".platform-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${index * 0.15}s`;
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  }, []);
+
   return (
     <section id="platforms" className="platforms">
       <h2>Our Platforms</h2>

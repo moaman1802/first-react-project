@@ -98,3 +98,62 @@
     display: block;
   }
 }
+.nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Nav items base */
+.nav button {
+  background: none;
+  border: none;
+  color: #150202f5;
+  font: inherit;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+}
+
+/* Hover underline effect */
+.nav button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #00c6ff; /* Infosys-style blue */
+  transition: width 0.3s ease;
+}
+
+/* On hover show line */
+.nav button:hover::after {
+  width: 100%;
+}
+
+/* CTA button ko underline se alag rakho */
+.nav .cta-btn::after {
+  display: none;
+}
+
+.nav .cta-btn {
+  padding: 10px 18px;
+  background-color: #00c6ff;
+  color: #000;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+/* CTA par underline nahi chahiye */
+.nav .cta-btn::after {
+  display: none;
+}
+
+/* Hover effect for CTA */
+.nav .cta-btn:hover {
+  background-color: #00a3d9;
+}

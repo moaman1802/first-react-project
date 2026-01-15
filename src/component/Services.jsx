@@ -1,10 +1,30 @@
+import { useEffect } from "react";
 import "./Services.css";
 
 function Services() {
-  return (
 
-<section id="services" className="services">
-          <h2>Our Services</h2>
+  // 👇 JS: Scroll animation for service cards
+  useEffect(() => {
+    const cards = document.querySelectorAll(".service-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${index * 0.12}s`;
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  }, []);
+
+  return (
+    <section id="services" className="services">
+      <h2>Our Services</h2>
       <p className="sub-text">Driving innovation through technology</p>
 
       <div className="services-grid">
