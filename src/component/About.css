@@ -1,0 +1,37 @@
+.about {
+  padding: 90px 80px;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.about-content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  color: #222;
+}
+
+.tagline {
+  color: #007cc3;
+  margin: 10px 0 25px;
+  font-weight: 500;
+}
+
+.about-text {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  font-size: 15px;
+  color: #333;
+}

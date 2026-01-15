@@ -1,0 +1,43 @@
+.platforms {
+  padding: 80px 60px;
+  background: white;
+  text-align: center;
+}
+
+.platforms h2 {
+  font-size: 36px;
+  color: #222;
+}
+
+.platforms .sub-text {
+  margin-top: 10px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.platform-card {
+  padding: 35px 25px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.platform-card:hover {
+  background: #007cc3;
+  color: white;
+  transform: translateY(-8px);
+}
+
+.platform-card h3 {
+  margin-bottom: 12px;
+}
+
+.platform-card p {
+  font-size: 15px;
+}
