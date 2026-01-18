@@ -19,8 +19,7 @@ function Hero() {
       id="home"
       className="hero"
       style={{
-        backgroundImage:
-          "url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg)",
+        backgroundImage: "url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg)",
       }}
     >
       <div className="hero-overlay">

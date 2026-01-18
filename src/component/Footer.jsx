@@ -66,7 +66,7 @@ function Footer() {
         <div className="footer-box">
           <h4>Contact</h4>
           <p>Email: info@shahtech.com</p>
-          <p>Phone: +91 9536063146 , 7055165787</p>
+          <p>Phone: +91 9520653146 , 7055165787</p>
           <p>India</p>
         </div>
       </div>

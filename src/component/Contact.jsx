@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,18 +15,34 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // abhi ke liye simple JS action
-    alert(`Thank you ${formData.name}, we will contact you soon!`);
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // form reset
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Message sent successfully 🚀");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert("Something went wrong ❌");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server error. Try again later.");
+    }
   };
 
   return (

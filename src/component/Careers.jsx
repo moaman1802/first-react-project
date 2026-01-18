@@ -3,7 +3,7 @@ import "./Careers.css";
 
 function Careers() {
 
-  // 👇 JS Logic: Scroll animation
+  // 👇 Scroll animation
   useEffect(() => {
     const cards = document.querySelectorAll(".career-card");
 
@@ -22,9 +22,28 @@ function Careers() {
     cards.forEach((card) => observer.observe(card));
   }, []);
 
-  // 👇 JS Logic: Apply button
-  const applyNow = (role) => {
-    alert(`You applied for: ${role}\nOur team will contact you soon.`);
+  // 👇 Apply job → backend
+  const applyNow = async (role) => {
+    try {
+      const res = await fetch("http://localhost:5000/api/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ role }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert(data.message);
+      } else {
+        alert("Something went wrong ❌");
+      }
+    } catch (error) {
+      console.error("Apply Error:", error);
+      alert("Server error. Try again later.");
+    }
   };
 
   return (
