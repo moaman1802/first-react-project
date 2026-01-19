@@ -17,10 +17,11 @@ function Hero() {
   return (
     <section
       id="home"
-      className="hero"
+      className="hero"s
       style={{
-        backgroundImage: "url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg)",
-      }}
+        backgroundImage:
+"url(https://images.unsplash.com/photo-1503614472-8c93d56e92ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D)",     
+ }}
     >
       <div className="hero-overlay">
         <div className="hero-content">
