@@ -15,14 +15,19 @@ function Hero() {
   };
 
   return (
-    <section
-      id="home"
-      className="hero"s
-      style={{
-        backgroundImage:
-"url(https://images.unsplash.com/photo-1503614472-8c93d56e92ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D)",     
- }}
-    >
+    <section id="home" className="hero">
+      
+      {/* Background Video */}
+      <video
+        className="hero-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/vid.mp4" type="video/mp4" />
+      </video>
+
       <div className="hero-overlay">
         <div className="hero-content">
           <h1>Welcome to ShahTech</h1>
@@ -36,6 +41,7 @@ function Hero() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }
