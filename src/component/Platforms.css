@@ -1,12 +1,12 @@
 .platforms {
   padding: 80px 60px;
-  background: white;
+  background: rgb(235, 235, 230);
   text-align: center;
 }
 
 .platforms h2 {
   font-size: 36px;
-  color: #222;
+  color: #060101;
 }
 
 .platforms .sub-text {

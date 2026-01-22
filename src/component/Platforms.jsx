@@ -24,6 +24,18 @@ function Platforms() {
 
   return (
     <section id="platforms" className="platforms">
+
+      {/* Background Video */}
+      <video
+        className="platforms-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/vid3.mp4" type="video/mp4" />
+      </video>
+
       <h2>Our Platforms</h2>
       <p className="sub-text">Powering digital transformation</p>
 
